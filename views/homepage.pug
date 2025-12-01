@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Custom Object Table
+
+    a(href="/update-cobj") Add/Update this table
+
+    if records.length
+      table(border="1" cellpadding="10" cellspacing="0")
+        thead
+          tr
+            th Name
+            th Category
+            th Description
+        tbody
+          each record in records
+            tr
+              td= record.properties.name
+              td= record.properties.category
+              td= record.properties.description
+    else
+      p No records found.
